@@ -1,18 +1,20 @@
-HPP_FILES = glob(["**/*.hpp"])
+filegroup(
+    name = "headers",
+    srcs = glob(["**/*.hpp", "**/*.h"]),
+)
 
-H_FILES = glob(["**/*.h"])
-
-INL_FILES = glob(["**/*.inl"])
-
-INCLUDES = HPP_FILES + H_FILES
+filegroup(
+    name = "inlines",
+    srcs = glob(["**/*.inl"]),
+)
 
 cc_library(
     name = "glm",
-    srcs = INCLUDES,
+    srcs = [":headers"],
     hdrs = [
         "glm/fwd.hpp",
         "glm/glm.hpp",
     ],
-    textual_hdrs = INL_FILES,
+    textual_hdrs = [":inlines"],
     visibility = ["//visibility:public"],
 )
