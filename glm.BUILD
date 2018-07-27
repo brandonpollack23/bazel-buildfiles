@@ -17,4 +17,5 @@ cc_library(
     ],
     textual_hdrs = [":inlines"],
     visibility = ["//visibility:public"],
+    linkstatic = 1,
 )
