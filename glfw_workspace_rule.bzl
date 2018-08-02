@@ -52,5 +52,5 @@ def bzl_fail(msg):
 
 get_glfw = repository_rule(
     implementation = _glfw_cmake_impl,
-    attrs = {}, # TODO add attrs for configurable stuff in glfw
+    attrs = {}, # TODO add attrs for configurable stuff in glfw, TODO add version picker
 )
