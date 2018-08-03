@@ -33,8 +33,8 @@ def _generate_bazel_buildfile(repository_ctx):
       repository_ctx.path("BUILD"),
       content = """
 cc_library(
-    name = "glfw",
-    srcs = ["src/libglfw.a"],
+    name = "glfw3",
+    srcs = ["src/libglfw3.a"],
     hdrs = ["glfw/include/GLFW/glfw3.h"],
     include_prefix = "GLFW",
     visibility = ["//visibility:public"],
